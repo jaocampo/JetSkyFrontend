@@ -1,0 +1,52 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="col-sm-6 col-md-4" ng-repeat="item in vm.motosAcuaticas">
+	    <div class="thumbnail">
+	      <!--img src="..." alt="..."-->
+	      <div class="caption">
+	        <h3>{{item.marca}}</h3>
+	        <p>{{item.descripcion}}</p>
+	        <p><a href="#" class="btn btn-primary" role="button">Rentar</a></p>
+	      </div>
+	    </div>
+	  </div>
+		</div>
+		<div class="col-md-4">
+			<h2>FORMULARIO</h2>
+			<form name="formAlquiler" ng-submit="vm.rentarMoto()">
+				<div class="form-group">
+					<label for="">Nombre Cliente</label>
+					<input type="text" class="form-control" ng-model="vm.alquiler.nombresCliente">
+				</div>
+
+				<div class="form-group">
+					<label for="">Apellidos Cliente</label>
+					<input type="text" class="form-control" ng-model="vm.alquiler.apellidosCliente">
+				</div>
+
+				<div class="form-group">
+					<label for="">Tipo Cliente</label>
+					
+					<select class="form-control" name="" id="" ng-model="vm.alquiler.idTipoCliente.id"><option ng-value="item.id" ng-repeat="item in vm.tipoCliente">{{item.tipo}}</option></select>
+				</div>
+
+				<div class="form-group">
+					<label for="">Cantidad Plan</label>
+					<input type="text" class="form-control" ng-model="vm.alquiler.cantidadPlan">
+				</div>
+
+				<div class="form-group">
+					<label for="">Plan</label>
+					
+					<select class="form-control" name="" id="" ng-model="vm.alquiler.idPlan.id"><option ng-value="item.id" ng-repeat="item in vm.planes">{{item.nombrePlan}}</option></select>
+				</div>
+
+				<button class ="btn btn-success" type="submit">Guardar</button>
+
+			</form>
+		</div>
+	  
+	</div>
+</div>

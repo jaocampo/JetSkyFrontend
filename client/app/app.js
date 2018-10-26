@@ -5,8 +5,11 @@ angular.module('jetSkyApp', [
 	'ngCookies', 
 	'ngResource', 
 	'ngSanitize',
-    'ui.router'
+  'ui.router'
   ])
+
+  .constant('API', 'http://localhost:8080/backend_jetsky-master')
+
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
